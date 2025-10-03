@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { NavigationItem } from "@/types";
 import { cn } from "@/lib/utils";
@@ -11,21 +12,45 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) {
+  // Prevenir scroll del body cuando el menú está abierto
+  useEffect(() => {
+    if (isOpen) {
+      // Guardar el scroll actual
+      const scrollY = window.scrollY;
+      
+      // Aplicar estilos para prevenir scroll
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      
+      // Cleanup function para restaurar el scroll
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <>
-      {/* Overlay */}
+      {/* Overlay con fondo negro mejorado */}
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+        className="fixed inset-0 bg-black bg-opacity-60 z-40 lg:hidden backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
       
-      {/* Menu Panel */}
+      {/* Menu Panel con scroll controlado */}
       <div className={cn(
-        "fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 lg:hidden",
+        "fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden",
         "transform transition-transform duration-300 ease-in-out",
+        "flex flex-col",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}>
         {/* Header del menú móvil */}
@@ -42,8 +67,8 @@ export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) 
           </button>
         </div>
 
-        {/* Enlaces de navegación */}
-        <nav className="p-6">
+        {/* Enlaces de navegación con scroll controlado */}
+        <nav className="flex-1 overflow-y-auto p-6">
           <ul className="space-y-2">
             {items.map((item) => (
               <li key={item.id}>
@@ -112,8 +137,8 @@ export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) 
           </ul>
         </nav>
 
-        {/* Footer del menú móvil */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200">
+        {/* Footer del menú móvil fijo */}
+        <div className="flex-shrink-0 p-6 border-t border-gray-200 bg-white">
           <div className="text-sm text-gray-600 text-center">
             CTP Ing. Carlos Pascua Zúñiga
           </div>
