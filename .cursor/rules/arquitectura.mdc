@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+El file structure debe revelar inmediatamente QUÉ hace cada parte
+Los nombres de carpetas/archivos deben ser autodescriptivos
+Cada feature debe estar contenida en su propio módulo
+
+"La arquitectura debe gritar su propósito"

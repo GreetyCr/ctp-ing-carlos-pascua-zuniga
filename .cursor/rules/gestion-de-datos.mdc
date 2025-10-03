@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+// ✅ CORRECTO: Datos centralizados
+src/data/COLLEGE_INFO.ts
+src/data/SPECIALTIES.ts
+src/data/VALUES.ts
+
+// ❌ INCORRECTO: Datos duplicados en componentes

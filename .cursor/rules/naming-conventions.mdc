@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+
+// Componentes: PascalCase
+ContactSection.tsx
+SpecialtyCard.tsx
+
+// Utilities: camelCase
+formatPhoneNumber.ts
+scrollToSection.ts
+
+// Constants: SCREAMING_SNAKE_CASE
+COLLEGE_INFO.ts
+SPECIALTIES_DATA.ts
+
+// Carpetas: kebab-case
+contact-section/
+specialty-cards/

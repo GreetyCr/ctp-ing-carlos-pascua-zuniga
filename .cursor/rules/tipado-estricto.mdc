@@ -1,0 +1,16 @@
+---
+alwaysApply: true
+---
+
+// ✅ TODO dato debe tener TypeScript interface
+interface Specialty {
+  id: string;
+  name: string;
+  description: string;
+  duration: string;
+  modality: string;
+  icon: string;
+}
+
+// ✅ Exportar types desde un archivo central
+export type { Specialty, ContactInfo, Value };

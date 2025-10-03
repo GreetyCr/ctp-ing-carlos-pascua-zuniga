@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+✅ Un componente = Un archivo
+✅ Una feature = Una carpeta
+✅ Componentes pequeños y reutilizables
+❌ NO archivos con múltiples componentes
+❌ NO componentes de más de 200 líneas

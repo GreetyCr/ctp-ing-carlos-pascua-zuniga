@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+❌ PROHIBIDO:
+
+Usar any en TypeScript sin justificación documentada
+Crear componentes sin props tipadas
+Hardcodear datos dentro de componentes (usar data files)
+Inventar contenido institucional
+Usar localStorage/sessionStorage (no necesario en sitio estático)
+Importar librerías no aprobadas sin consultar
+Completar tarea sin crear LOG
+Hacer commits sin mensaje descriptivo
+Crear archivos sin seguir naming conventions
+Mezclar lógica de negocio con componentes de UI

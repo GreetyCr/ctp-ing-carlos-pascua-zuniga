@@ -1,0 +1,16 @@
+---
+alwaysApply: true
+---
+
+Colores primarios (Bandera de Costa Rica + Amarillo):
+--ctp-blue: #002B7F    /* Azul bandera */
+--ctp-red: #CE1126     /* Rojo bandera */
+--ctp-white: #FFFFFF   /* Blanco */
+--ctp-gold: #FFD700    /* Amarillo/Dorado */
+
+
+Colores secundarios:
+--gray-50: #F9FAFB
+--gray-100: #F3F4F6
+--gray-600: #4B5563
+--gray-900: #111827

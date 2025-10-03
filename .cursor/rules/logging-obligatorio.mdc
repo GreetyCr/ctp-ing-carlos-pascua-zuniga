@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+Cada agente/desarrollador DEBE crear un LOG después de completar su tarea.
+
+Estructura del log:
+
+## [FECHA] - [FEATURE/COMPONENTE]
+**Agente:** [Nombre o ID]
+**Duración:** [Tiempo]
+
+### Objetivo
+[Qué se debía construir]
+
+### Implementación
+[Qué se construyó y cómo]
+
+### Decisiones de Diseño
+- [Decisión 1 y su razón]
+- [Decisión 2 y su razón]
+
+### API/Props (si aplica)
+[Cómo se usa el componente/función]
+
+### Dependencias
+[Qué otros componentes/datos consume]
+
+### Testing Manual
+[Qué se probó y resultados]
+
+### Issues Conocidos
+[Problemas pendientes o edge cases]
+
+### Contexto para Futuros Agentes
+[Información importante que otros deben saber]
