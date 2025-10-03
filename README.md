@@ -39,7 +39,7 @@ El colegio ofrece 6 especialidades técnicas de 3 años de duración:
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone https://github.com/GreetyCr/ctp-carlos-pascua-zuniga.git
+git clone https://github.com/GreetyCr/ctp-ing-carlos-pascua-zuniga.git
 
 # Instalar dependencias
 npm install
