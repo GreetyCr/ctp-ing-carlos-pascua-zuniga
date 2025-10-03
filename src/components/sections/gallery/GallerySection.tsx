@@ -45,7 +45,7 @@ export function GallerySection({ className }: GallerySectionProps) {
 
         {/* Grid de imágenes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {GALLERY_CONTENT.images.map((image, index) => (
+          {GALLERY_CONTENT.images.map((image) => (
             <div
               key={image.id}
               className="group relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"

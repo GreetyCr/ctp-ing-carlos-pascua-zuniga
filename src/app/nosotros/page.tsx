@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import { COLLEGE_INFO } from "@/data/COLLEGE_INFO";
 import { VALUES, VALORES_SECTION_CONTENT } from "@/data/VALUES";
 import { ValoresSection } from "@/components/sections/valores";
-import { LucideIcon } from "lucide-react";
-import { Award, Heart, Sun, Users, Leaf } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros - CTP Ing. Carlos Pascua Zúñiga",
@@ -11,13 +9,10 @@ export const metadata: Metadata = {
     "Conoce la misión, visión y valores del Colegio Técnico Profesional Ing. Carlos Pascua Zúñiga - San Rafael, Heredia, Costa Rica",
 };
 
-const iconMap: Record<string, LucideIcon> = {
-  Award,
-  Heart,
-  Sun,
-  Users,
-  Leaf,
-};
+// Iconos disponibles para los valores (comentado para evitar warning)
+// const iconMap: Record<string, LucideIcon> = {
+//   Award, Heart, Sun, Users, Leaf,
+// };
 
 export default function NosotrosPage() {
   return (

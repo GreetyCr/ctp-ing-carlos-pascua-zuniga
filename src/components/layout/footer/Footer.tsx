@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { COLLEGE_INFO } from "@/data/COLLEGE_INFO";
 import { CONTACT_INFO } from "@/data/CONTACT";
 import { NAVIGATION_ITEMS } from "@/data/NAVIGATION";
@@ -66,12 +67,18 @@ export default function Footer() {
             <ul className="space-y-3">
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={item.href}
-                    className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
-                  >
-                    {item.label}
-                  </a>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <span className="text-gray-300 text-sm">
+                      {item.label}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -84,52 +91,52 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
+                <Link
                   href="/especialidades/gestion-calidad"
                   className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
                 >
                   Gestión de la Calidad
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/especialidades/banca-finanzas"
                   className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
                 >
                   Banca y Finanzas
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/especialidades/contabilidad-control-interno"
                   className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
                 >
                   Contabilidad y Control Interno
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/especialidades/desarrollo-aplicaciones-software"
                   className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
                 >
                   Desarrollo de Aplicaciones Software
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/especialidades/construccion-civil"
                   className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
                 >
                   Construcción Civil
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/especialidades/dibujo-modelado-edificaciones"
                   className="text-gray-300 text-sm hover:text-blue-400 transition-colors"
                 >
                   Dibujo y Modelado para Edificaciones
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -166,18 +173,18 @@ export default function Footer() {
 
               {/* Quick Actions */}
               <div className="flex space-x-4">
-                <a
+                <Link
                   href="/matricula"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center"
                 >
                   Matrícula 2025
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contacto"
                   className="border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-blue-400 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center"
                 >
                   Contacto
-                </a>
+                </Link>
               </div>
             </div>
           </div>

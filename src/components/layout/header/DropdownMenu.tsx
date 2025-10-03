@@ -28,7 +28,7 @@ export default function DropdownMenu({ item, className }: DropdownMenuProps) {
   }, []);
 
   if (!item.children || item.children.length === 0) {
-    return (
+    return item.href ? (
       <Link
         href={item.href}
         className={cn(
@@ -42,6 +42,17 @@ export default function DropdownMenu({ item, className }: DropdownMenuProps) {
       >
         {item.label}
       </Link>
+    ) : (
+      <span
+        className={cn(
+          "text-2xl font-serif text-gray-900",
+          "px-2 py-1 rounded-md",
+          "min-h-[48px] min-w-[48px] flex items-center justify-center",
+          className
+        )}
+      >
+        {item.label}
+      </span>
     );
   }
 
@@ -81,20 +92,32 @@ export default function DropdownMenu({ item, className }: DropdownMenuProps) {
         <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
           <div className="py-2">
             {item.children.map((child) => (
-              <Link
-                key={child.id}
-                href={child.href}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "block px-4 py-3 text-lg font-serif text-gray-700",
-                  "hover:bg-gray-50 hover:text-blue-500",
-                  "focus:outline-none focus:ring-2 focus:ring-ctp-blue focus:ring-inset",
-                  "transition-colors duration-200",
-                  "min-h-[48px] flex items-center"
-                )}
-              >
-                {child.label}
-              </Link>
+              child.href ? (
+                <Link
+                  key={child.id}
+                  href={child.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "block px-4 py-3 text-lg font-serif text-gray-700",
+                    "hover:bg-gray-50 hover:text-blue-500",
+                    "focus:outline-none focus:ring-2 focus:ring-ctp-blue focus:ring-inset",
+                    "transition-colors duration-200",
+                    "min-h-[48px] flex items-center"
+                  )}
+                >
+                  {child.label}
+                </Link>
+              ) : (
+                <span
+                  key={child.id}
+                  className={cn(
+                    "block px-4 py-3 text-lg font-serif text-gray-700",
+                    "min-h-[48px] flex items-center"
+                  )}
+                >
+                  {child.label}
+                </span>
+              )
             ))}
           </div>
         </div>

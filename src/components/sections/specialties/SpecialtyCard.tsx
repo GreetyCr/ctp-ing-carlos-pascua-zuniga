@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Specialty } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -67,7 +68,7 @@ export function SpecialtyCard({ specialty, className }: SpecialtyCardProps) {
 
         {/* Botón de navegación */}
         <div className="pt-4">
-          <a
+          <Link
             href={`/especialidades/${specialty.id}`}
             className="inline-flex items-center justify-center w-full px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-lg hover:bg-blue-500/90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 hover:shadow-md min-h-[40px]"
             aria-label={`Ver detalles de ${specialty.name}`}
@@ -87,7 +88,7 @@ export function SpecialtyCard({ specialty, className }: SpecialtyCardProps) {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
 

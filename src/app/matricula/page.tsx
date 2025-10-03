@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { COLLEGE_INFO } from "@/data/COLLEGE_INFO";
 
 export const metadata: Metadata = {
@@ -227,12 +228,12 @@ export default function MatriculaPage() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/contacto"
               className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500/90 transition-colors"
             >
               Contactar Ahora
-            </a>
+            </Link>
           </div>
         </div>
       </section>

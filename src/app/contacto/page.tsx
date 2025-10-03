@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { COLLEGE_INFO } from "@/data/COLLEGE_INFO";
 import { CONTACT_INFO } from "@/data/CONTACT";
 
 export const metadata: Metadata = {

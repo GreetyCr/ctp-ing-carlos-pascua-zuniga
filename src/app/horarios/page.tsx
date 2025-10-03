@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { COLLEGE_INFO } from "@/data/COLLEGE_INFO";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Horarios - CTP Ing. Carlos Pascua Zúñiga",
@@ -196,12 +196,12 @@ export default function HorariosPage() {
             contacta con la administración del colegio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/contacto"
               className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500/90 transition-colors"
             >
               Contactar Administración
-            </a>
+            </Link>
             <a
               href="tel:2237-2710"
               className="border-2 border-ctp-blue text-blue-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-colors"

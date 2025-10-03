@@ -47,38 +47,62 @@ export default function MobileMenu({ isOpen, onClose, items }: MobileMenuProps) 
           <ul className="space-y-2">
             {items.map((item) => (
               <li key={item.id}>
-                <Link
-                  href={item.href}
-                  onClick={onClose}
-                  className={cn(
-                    "block text-xl font-serif text-gray-900",
-                    "hover:text-blue-500 hover:bg-gray-50",
-                    "focus:outline-none focus:ring-2 focus:ring-ctp-blue focus:ring-offset-2",
-                    "px-4 py-3 rounded-md transition-colors duration-200",
-                    "min-h-[48px] flex items-center"
-                  )}
-                >
-                  {item.label}
-                </Link>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    onClick={onClose}
+                    className={cn(
+                      "block text-xl font-serif text-gray-900",
+                      "hover:text-blue-500 hover:bg-gray-50",
+                      "focus:outline-none focus:ring-2 focus:ring-ctp-blue focus:ring-offset-2",
+                      "px-4 py-3 rounded-md transition-colors duration-200",
+                      "min-h-[48px] flex items-center"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span
+                    className={cn(
+                      "block text-xl font-serif text-gray-900",
+                      "px-4 py-3 rounded-md",
+                      "min-h-[48px] flex items-center"
+                    )}
+                  >
+                    {item.label}
+                  </span>
+                )}
                 
                 {/* Submenú para especialidades */}
                 {item.children && item.children.length > 0 && (
                   <ul className="ml-4 mt-2 space-y-1">
                     {item.children.map((child) => (
                       <li key={child.id}>
-                        <Link
-                          href={child.href}
-                          onClick={onClose}
-                          className={cn(
-                            "block text-lg font-serif text-gray-600",
-                            "hover:text-blue-500 hover:bg-gray-50",
-                            "focus:outline-none focus:ring-2 focus:ring-ctp-blue focus:ring-offset-2",
-                            "px-4 py-2 rounded-md transition-colors duration-200",
-                            "min-h-[44px] flex items-center"
-                          )}
-                        >
-                          {child.label}
-                        </Link>
+                        {child.href ? (
+                          <Link
+                            href={child.href}
+                            onClick={onClose}
+                            className={cn(
+                              "block text-lg font-serif text-gray-600",
+                              "hover:text-blue-500 hover:bg-gray-50",
+                              "focus:outline-none focus:ring-2 focus:ring-ctp-blue focus:ring-offset-2",
+                              "px-4 py-2 rounded-md transition-colors duration-200",
+                              "min-h-[44px] flex items-center"
+                            )}
+                          >
+                            {child.label}
+                          </Link>
+                        ) : (
+                          <span
+                            className={cn(
+                              "block text-lg font-serif text-gray-600",
+                              "px-4 py-2 rounded-md",
+                              "min-h-[44px] flex items-center"
+                            )}
+                          >
+                            {child.label}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>

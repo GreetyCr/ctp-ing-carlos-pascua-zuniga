@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { SPECIALTIES } from "@/data/SPECIALTIES";
 import { Specialty } from "@/types";
-import { cn } from "@/lib/utils";
 
 // Mapeo de iconos para la página
 const iconMap = {
@@ -310,18 +310,18 @@ export default async function SpecialtyPage({ params }: { params: Promise<{ id: 
             Contacta con nosotros para más información sobre el proceso de matrícula
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/matricula"
               className="bg-white text-blue-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors min-h-[48px] flex items-center justify-center"
             >
               Proceso de Matrícula
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contacto"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-500 transition-colors min-h-[48px] flex items-center justify-center"
             >
               Contactar
-            </a>
+            </Link>
           </div>
         </div>
       </section>
